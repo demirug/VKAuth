@@ -1,0 +1,133 @@
+MySQL:
+  url: 'jdbc:mysql://localhost:3306/auth?autoReconnect=true'
+  username: 'username'
+  password: 'password'
+  
+PermissionsBD:
+    url: 'jdbc:mysql://localhost:3306/permissions?autoReconnect=true'
+    username: 'root'
+    password: 'test'
+
+PURGE: false
+PROTECT-GROUPS:
+    - 'admin'
+    - 'owner'
+#Без капса писать
+
+AUTH:
+    - lobby-1
+    - lobby-2
+
+SURVIVAL:
+    - survival-1
+    - survival-2
+
+CHECK-FOR-ONLINE:
+    ENABLE: true
+    TIME: 10
+#Проверка онлайн ли сервер
+#Time - интервал
+#Прозвона offline сервера занимает 2 секунды
+
+ADMINS:
+    - _Demirug_
+
+MAX-ACCOUTS-PER-IP: 1
+#Кол-во аккаунтов на 1 IP
+
+HASH: DISABLED
+#Доступно: MD5, SHA256, CRC32
+#Если убирать или менять тип хеширования необходимо удалять базу данных
+
+TITLES:
+    ENABLE: true
+    LOGIN:
+        TITLE: '&a&lАвторизуйтесь'
+        SUBTITLE: '&e/login [Пароль]'
+    REGISTER:
+        TITLE: '&a&lЗарегистрируйтесь'
+        SUBTITLE: '&e/register [Пароль] [Повтор пароля]'
+
+VK-MODULE:
+    ENABLE: false
+    ID: 5555
+    ADMINS: [154774610]
+    TOKEN: 'group_token'
+    CODE-LENGTH: 4
+    MAX-USERS-PER-ACOOUNT: 3
+    UNKNOW: 'Неизвестная команда'
+    CUSTOM-MESSAGES:
+       кто: 'Привет это я бот'
+       мир: 'ну ок....'
+    KEYS-ANSWER:
+        DONATE:
+            KEYS: [купить, донат]
+            ANSWER: 'Донат можно купить на сайте yourserver.com'
+MAX-PASSWORD-ERRORS: 3
+
+MESSAGES:
+    AlreadyRegistered: '&6Auth &7> &fВы уже зарегистрированы'
+    AlreadyLogin: '&6Auth &7> &fВы уже авторизированны'
+    SuccessRegister: '&6Auth &7> &fВы успешно зарегистрировались'
+    SuccessLogin: '&6Auth &7> &fВы успешно авторизовались'
+    NoRegistered: '&6Auth &7> &fВы не зарегистрированы'
+    NoLogin: '&6Auth &7> &fВы не авторизованы'
+    Register: '&6Auth &7> &fЗарегистрируйтесь /register [Пароль] [Повтор Пароля]'
+    Login: '&6Auth &7> &fАвторизуйтесь /login [Пароль]'
+    ChangePasswordInfo: '&6Auth &7> &fСинтаксис: /changepassword [Старый Пароль] [Пароль] [Повтор Пароля]'
+    WrongOldPassword: '&6Auth &7> &fСтарый пароль введен неверно'
+    RegisterInfo: '&6Auth &7> &fСинтаксис: /register [Пароль] [Повтор Пароля]'
+    RecoverynewPassword: '&6Auth &7> &fВаш новый пароль: &c{pass}'
+    PasswordMinLenght: '&6Auth &7> &fМинимальная длина пароля &c4&f символа'
+    PasswordMaxLenght: '&6Auth &7> &fМаксимальная длина пароля &c16&f символов'
+    PasswordIncorrectSymbols: '&6Auth &7> &fВ пароле содержатся запрещенные символы'
+    PasswordChanged: '&6Auth &7> &fПароль успешно изменен'
+    LoginInfo: '&6Auth &7> &fСинтаксис: /login [Пароль]'
+    WrongPassword: '&6Auth &7> &fНеверный пароль! У вас осталось &c{attempts}&f попытка(и)'
+    TooManyLoginAttempts: '&6Auth &7> &fСлишком много попыток авторизации'
+    RegistrationTimeOut: '&6Auth &7> &fВы не успели авторизоватся'
+    NameIncorrectSymbols: '&6Auth &7> &fВ нике содержатся запрещенные символы | Разрешено использовать только буквы и цифры латинского алфавита'
+    ConnectError: '&7< &6Auth &7>{new}{new}&fОшибка при телепортации к &c{type} &fсерверу{new}Сообщите администрации'
+    LogOut: '&6Auth &7> &fВы вышли'
+    NotYourAccount: '&7< &6Auth &7>{new}{new}&fДанный аккаунт не принадлежит вам'
+    Code: '&6Auth &7> &fКод подтверждения &c{code}'
+    VKRecomended: '&6Auth &7> &fПривяжите ваш игровой аккаунт в аккаунту VK. vk.com/bot'
+    VK-CODE-SEND: '&6Auth &7> &fВам в VK отправлен код'
+    CODE-TIME-OUT: '&6Auth &7> &fВы неуспели ввести код'
+    CODE-INFO: '&6Auth &7> &fСинтаксис: /code [Код]'
+    NO-CODE: '&6Auth &7> &fУ вас нет кода'
+    CODE-WRONG: '&6Auth &7> &fНеверный код! У вас осталось &c{attempts}&f попытка(и)'
+    VkCommandOut: '{playername} ты питух'
+    BLOCKED: 'Вы заблокированы! Вы дыбил'
+    MaxAccoutsPerIP: 'У вас слишком много аккаунтов на IP адресс зарегистрировано'
+    Not-RealName: '[Неправильный ник] Вы зашли с {name} однако вы должны зайти с {realname}'
+BOT-MESSAGES:
+    BIND-HELP: 'Использование: Привязать [Ник]'
+    BIND-NULL: 'Аккаунт с ником {name} не найден или игрок оффлайн'
+    BIND-HAS: 'Аккаунт уже привязан к VK'
+    BIND-USED: 'К вашему аккаунту VK уже привязаны 3 пользователя'
+    BIND-NO-LOGIN: 'Игрок не авторизовался'
+    BIND-SEND: 'В игру отправлен код. Используйте: Подтвердить [Код]'
+    CONFIRM-HELP: 'Использование: подтвердить [код]'
+    CONFIRM-ERROR: 'Данного кода не существует'
+    CONFIRM-ALREADY-DONE: 'Игрок уже привязал VK'
+    CONFIRM-DONE: 'Вы успешно привязали аккаунт {name}'
+    RECOVERY-HELP: 'Использование: восстановить [Ник]'
+    RECOVERY-NULL: 'Аккаунт с ником {name} не найден'
+    RECOVERY-NOT-YOUR: 'Аккаунт не привязан к вашему VK'
+    RECOVERY-DONE: 'Пароль вашего аккаунта изменен. Ваш новый пароль: {pass}'
+    BAN-INFO: 'На ваш аккаунт {name} пытались зайти по IP {ip}'
+    CODE-INFO: 'Ваш код для входа на аккаунт {name}: {code}{new}IP: {ip}'
+    NOT-FORMAT: 'Некорректное имя игрока'
+    ACCOUNTS-NULL: 'К вашему аккаунту VK не привязаны аккаунты игроков'
+    ACCOUTS: 'К вашему аккаунту VK привязаны игроки: {accounts}'
+    AUTHORIZATION-HELP: 'Использование: Авторизация [Ник] [Вкл/Выкл]'
+    AUTHORIZATION-INCORRECT-TYPE: 'Разрешено использовать в качестве аргумента [Вкл/Выкл]'
+    AUTHORIZATION-ACCOUNT-NOT-FOUND: 'Аккаунт не найден'
+    AUTHORIZATION-NOT-YOUR: 'Аккаунт {name} не принадлежит вам'
+    AUTHORIZATION-CHANGED: 'Двухфакторная авторизация на аккаунте {name} {status}'
+    UNLINK-HELP: 'Использование: отвязать [Ник]'
+    UNLINK-NULL: 'Аккаунт ненайден'
+    UNLINK-NOT-YOUR: 'Аккаунт {name} не принадлежит вам'
+    UNLINK-DONE: 'Аккаунт {name} отвязан от вашего VK'
+    
